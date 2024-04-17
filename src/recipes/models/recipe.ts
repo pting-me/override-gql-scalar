@@ -1,3 +1,5 @@
+import { GraphQLDateTime } from 'graphql-scalars';
+
 import {
   Field,
   ID,
@@ -38,8 +40,13 @@ export class Recipe extends IRecipe {
   })
   description?: string;
 
-  @Field()
-  creationDate: Date;
+  @Field(() => GraphQLDateTime)
+  createdAt: Date;
+
+  // This will be automatically added as GraphQLISODateTime
+  // which causes a naming conflict
+  // @Field()
+  // updatedAt: Date;
 
   @Field()
   get averageRating(): number {

@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { NewRecipeInput } from './dto/new-recipe.input';
 import { RecipesArgs } from './dto/recipes.args';
 import { Recipe } from './models/recipe';
@@ -28,12 +29,12 @@ export class RecipesService {
         id: '1',
         title: 'Pizza',
         description: 'Calzone',
-        creationDate: new Date(),
+        createdAt: new Date(),
       }),
       new Recipe({
         id: '2',
         title: 'Spaghetti',
-        creationDate: new Date(),
+        createdAt: new Date(),
       }),
     ] as Recipe[];
   }
